@@ -136,4 +136,23 @@ return [
     'wholesale_notice_title' => 'Shënim',
     'wholesale_notice_body' => 'Kjo është shitje me shumicë. Porosia minimale është :min RSD. Ne dorëzojmë personalisht dhe nuk dërgojmë me shërbime korrieri.',
     'wholesale_minimum_not_met' => 'Porosia minimale është :min RSD (aktualisht :current RSD).',
+
+    // Faqja e re kryesore (dizajni "GlinArt")
+    'nav_custom_order' => 'Me porosi',
+    'eyebrow_handmade' => 'punuar me dorë, me dashuri',
+    'eyebrow_coffee' => 'ejani për kafe',
+    'category_all' => 'Të gjitha',
+    'stat_handmade_label' => 'punim me dorë në rrotë',
+    'stat_generations_number' => '2',
+    'stat_generations_label' => 'breza zanati',
+    'stat_materials_label' => 'baltë dhe glazurë natyrale',
+    'narudzbina_heading' => 'Prodhim me porosi',
+    'narudzbina_text' => 'Krijojmë enë, vazo dhe dhurata sipas idesë tuaj — nga skica te pjesa e përfunduar. Ideale për restorante, dhurata dhe sete dasme.',
+    'narudzbina_cta' => 'Dërgo kërkesë',
+    'workshop_label' => 'Punishtja',
+    'workshop_address_value' => 'Saprancë, komuna e Trgovishtes',
+    'workshop_hours_label' => 'Orari i punës',
+    'workshop_hours_value' => 'Hën–Sht, me marrëveshje',
+    'workshop_phone_email_label' => 'Telefon / Email',
+    'workshop_social_label' => 'Rrjetet sociale',
 ];

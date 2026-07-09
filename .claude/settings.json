@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/daniel/PhpstormProjects/GlinArt/**)",
+      "Read(//Users/daniel/PhpstormProjects/GlinArt/database/**)",
+      "Read(//Users/daniel/PhpstormProjects/GlinArt/database/migrations/**)",
+      "Bash(php artisan *)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=/tmp/home_screenshot.png --window-size=1440,3200 http://127.0.0.1:8000)",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=/tmp/home_bottom.png --window-size=1440,1400 http://127.0.0.1:8000)",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}

@@ -136,4 +136,23 @@ return [
     'wholesale_notice_title' => 'Напомена',
     'wholesale_notice_body' => 'Ова е велепродаја. Минималната нарачка е :min RSD. Доставуваме лично и не испраќаме преку курирски служби.',
     'wholesale_minimum_not_met' => 'Минималната нарачка е :min RSD (моментално :current RSD).',
+
+    // Нова еднострана почетна (дизајн „GlinArt“)
+    'nav_custom_order' => 'По нарачка',
+    'eyebrow_handmade' => 'рачно изработено, со љубов',
+    'eyebrow_coffee' => 'дојдете на кафе',
+    'category_all' => 'Сите',
+    'stat_handmade_label' => 'рачна изработка на тркало',
+    'stat_generations_number' => '2',
+    'stat_generations_label' => 'генерации занает',
+    'stat_materials_label' => 'природна глина и глазури',
+    'narudzbina_heading' => 'Изработка по нарачка',
+    'narudzbina_text' => 'Осмислуваме садови, вазни и подароци по ваша замисла — од скица до готов производ. Идеално за ресторани, подароци и свадбени сетови.',
+    'narudzbina_cta' => 'Испратете упит',
+    'workshop_label' => 'Работилница',
+    'workshop_address_value' => 'Сапранце, општина Трговиште',
+    'workshop_hours_label' => 'Работно време',
+    'workshop_hours_value' => 'Пон–Саб, по договор',
+    'workshop_phone_email_label' => 'Телефон / Е-пошта',
+    'workshop_social_label' => 'Општествени мрежи',
 ];

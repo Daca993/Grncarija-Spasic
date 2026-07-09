@@ -136,4 +136,23 @@ return [
     'wholesale_notice_title' => 'Бележка',
     'wholesale_notice_body' => 'Това е търговия на едро. Минималната поръчка е :min RSD. Доставяме лично и не изпращаме с куриерски услуги.',
     'wholesale_minimum_not_met' => 'Минималната поръчка е :min RSD (в момента :current RSD).',
+
+    // Нова едностранична начална страница (дизайн „GlinArt“)
+    'nav_custom_order' => 'По поръчка',
+    'eyebrow_handmade' => 'ръчна изработка, с любов',
+    'eyebrow_coffee' => 'елате на кафе',
+    'category_all' => 'Всички',
+    'stat_handmade_label' => 'ръчна изработка на грънчарско колело',
+    'stat_generations_number' => '2',
+    'stat_generations_label' => 'поколения занаят',
+    'stat_materials_label' => 'естествена глина и глазури',
+    'narudzbina_heading' => 'Изработка по поръчка',
+    'narudzbina_text' => 'Изработваме съдове, вази и подаръци по ваша идея — от скица до готово изделие. Идеално за ресторанти, подаръци и сватбени комплекти.',
+    'narudzbina_cta' => 'Изпратете запитване',
+    'workshop_label' => 'Работилница',
+    'workshop_address_value' => 'Сапранце, община Трговище',
+    'workshop_hours_label' => 'Работно време',
+    'workshop_hours_value' => 'Пон–Съб, по уговорка',
+    'workshop_phone_email_label' => 'Телефон / Имейл',
+    'workshop_social_label' => 'Социални мрежи',
 ];

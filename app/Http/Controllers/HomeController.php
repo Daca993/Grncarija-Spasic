@@ -20,7 +20,11 @@ class HomeController extends Controller
             ->orderBy('sort_order')
             ->limit(8)
             ->get();
-        return view('home', compact('categories', 'featuredProducts'));
+        $shopProducts = Product::where('is_active', true)
+            ->with(['category.translations', 'translations'])
+            ->orderBy('sort_order')
+            ->get();
+        return view('home', compact('categories', 'featuredProducts', 'shopProducts'));
     }
 
     public function about(): View

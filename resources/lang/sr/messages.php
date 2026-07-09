@@ -145,4 +145,23 @@ return [
     'wholesale_notice_title' => 'Napomena',
     'wholesale_notice_body' => 'Ovo je veleprodaja. Minimalna porudžbina je :min RSD. Dostavu vršimo lično i ne šaljemo kurirskim službama.',
     'wholesale_minimum_not_met' => 'Minimalna porudžbina je :min RSD (trenutno :current RSD).',
+
+    // Nova jednostrana početna (dizajn "GlinArt")
+    'nav_custom_order' => 'Po narudžbini',
+    'eyebrow_handmade' => 'ručno rađeno, sa ljubavlju',
+    'eyebrow_coffee' => 'dođite na kafu',
+    'category_all' => 'Sve',
+    'stat_handmade_label' => 'ručna izrada na točku',
+    'stat_generations_number' => '2',
+    'stat_generations_label' => 'generacije zanata',
+    'stat_materials_label' => 'prirodne gline i glazure',
+    'narudzbina_heading' => 'Izrada po porudžbini',
+    'narudzbina_text' => 'Osmišljavamo posuđe, vaze i poklone po vašoj zamisli — od skice do gotovog komada. Idealno za restorane, poklone i svadbene setove.',
+    'narudzbina_cta' => 'Pošaljite upit',
+    'workshop_label' => 'Radionica',
+    'workshop_address_value' => 'Saprance, opština Trgovište',
+    'workshop_hours_label' => 'Radno vreme',
+    'workshop_hours_value' => 'Pon–Sub, po dogovoru',
+    'workshop_phone_email_label' => 'Telefon / Email',
+    'workshop_social_label' => 'Društvene mreže',
 ];

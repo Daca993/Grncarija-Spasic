@@ -141,4 +141,23 @@ return [
     'wholesale_notice_title' => 'Note',
     'wholesale_notice_body' => 'This is wholesale. Minimum order is :min RSD. We deliver personally and do not ship via courier services.',
     'wholesale_minimum_not_met' => 'Minimum order is :min RSD (currently :current RSD).',
+
+    // New one-page homepage ("GlinArt" design)
+    'nav_custom_order' => 'Custom orders',
+    'eyebrow_handmade' => 'handmade, with love',
+    'eyebrow_coffee' => 'come for coffee',
+    'category_all' => 'All',
+    'stat_handmade_label' => 'hand-thrown on the wheel',
+    'stat_generations_number' => '2',
+    'stat_generations_label' => 'generations of craft',
+    'stat_materials_label' => 'natural clay and glazes',
+    'narudzbina_heading' => 'Made to order',
+    'narudzbina_text' => 'We design tableware, vases and gifts to your idea — from sketch to finished piece. Ideal for restaurants, gifts and wedding sets.',
+    'narudzbina_cta' => 'Send an inquiry',
+    'workshop_label' => 'Workshop',
+    'workshop_address_value' => 'Saprance, Trgovište municipality',
+    'workshop_hours_label' => 'Working hours',
+    'workshop_hours_value' => 'Mon–Sat, by appointment',
+    'workshop_phone_email_label' => 'Phone / Email',
+    'workshop_social_label' => 'Social media',
 ];

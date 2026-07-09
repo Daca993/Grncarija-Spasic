@@ -164,6 +164,18 @@ section {
   color: rgba(255, 255, 255, 0.9);
 }
 
+.section-dark .step-title {
+  color: white;
+}
+
+.section-dark .step-desc {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.section-dark .stat-label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .section-light {
   background-color: var(--color-light);
 }
@@ -173,7 +185,15 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+}
+
+/* Redovi proizvoda kao scroll-stacking kartice: svaki red se pri skrolu
+   zaustavi i prekrije prethodni (vidi .stack-item). */
+.product-stack-row {
+  background: var(--color-light);
+  padding: 1.5rem 0;
+  border-radius: 4px;
+  box-shadow: 0 -12px 32px rgba(42, 35, 32, 0.08);
 }
 
 @media (max-width: 640px) {
@@ -277,6 +297,28 @@ section {
   margin-bottom: 0;
 }
 
+/* ========== Scroll stacking kartice ========== */
+/* .stack-item: koristi se za manje grupe (npr. redovi proizvoda) koje se
+   preklapaju jedna preko druge sa malim pomerajem (top raste po stavci). */
+.stack-item {
+  position: sticky;
+  margin-bottom: 1.5rem;
+}
+
+.stack-item:last-child {
+  margin-bottom: 0;
+}
+
+/* .section-stack: cele sekcije početne strane (O nama, Kako nastaje,
+   Proizvodi, Kontakt) se lepe odmah ispod headera i svaka sledeća
+   sekcija u potpunosti prekriva prethodnu dok se skroluje ("domino"
+   efekat na nivou sekcija). */
+.section-stack {
+  position: sticky;
+  top: 64px;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.18);
+}
+
 /* ========== Proces - Koraci ========== */
 .process-steps {
   display: grid;
@@ -374,6 +416,24 @@ section {
   margin-bottom: 1rem;
 }
 
+/* ========== Adaptivni header (svetao/taman tekst) ========== */
+/* Kad se ispod headera nalazi tamna sekcija (.section-dark), JS (app-shop.js)
+   dodaje .header-on-dark na header da tekst postane beo umesto tamnog. */
+.header-on-dark {
+  background-color: color-mix(in oklch, var(--color-dark) 92%, transparent) !important;
+  backdrop-filter: blur(8px);
+}
+
+.header-on-dark a,
+.header-on-dark span,
+.header-on-dark button {
+  color: white;
+}
+
+.header-on-dark .etno-logo-icon {
+  filter: invert(1) brightness(2);
+}
+
 /* ========== Forme ========== */
 input, textarea, select {
   font-family: 'Work Sans', sans-serif;
@@ -384,6 +444,10 @@ input, textarea, select {
   color: var(--color-dark);
   font-size: 0.9rem;
   transition: border-color 0.2s ease;
+}
+
+select {
+  padding-right: 2.25rem;
 }
 
 input:focus, textarea:focus, select:focus {

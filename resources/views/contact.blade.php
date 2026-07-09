@@ -4,7 +4,13 @@
 @section('meta_description', config('app.name') . ' (Grncarija Spale) – kontakt informacije, veleprodaja i upiti.')
 
 @section('content')
-    <div class="site-container py-6 md:py-10">
-        <livewire:contact-form />
-    </div>
+    <section class="section-light">
+        <div class="site-container text-section" style="max-width: 640px;">
+            <h1>{{ __('messages.Contact') }}</h1>
+            <p style="margin-bottom: 2rem;">{{ __('messages.contact_subtitle') }}</p>
+            <div style="text-align: left;">
+                <livewire:contact-form />
+            </div>
+        </div>
+    </section>
 @endsection
