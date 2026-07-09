@@ -1,76 +1,34 @@
-# GlinArt — Grnčarska prodavnica
+# Primena novog dizajna na GlinArt / Grncarija-Spasic
 
-GlinArt je sajt za grnčarsku radnju: proizvodi po kategorijama, korpa, porudžbina. Admin dodaje kategorije/proizvode (slike, cene); korisnik naručuje; admin prima mejl sa .xlsx tabelom porudžbine. Aplikacija je izgrađena u Laravel (PHP) frameworku.
+Ovaj folder je za tvoj Laravel projekat (PhpStorm), ne za ovaj DC alat.
+Sadrži samo dva fajla za zamenu.
 
-## Uloge
+## Šta radiš
 
-- **Admin**: kategorije i proizvodi (CRUD, slike, cene), pregled porudžbina, promena statusa.
-- **Korisnik**: pregled proizvoda, dodavanje u korpu, porudžbina (bez obavezne registracije). Nakon porudžbine admin prima mejl sa prilogom .xlsx (stavke + ukupno).
+1. **Zameni** sadržaj `tailwind.config.js` (root projekta) sadržajem `handoff/tailwind.config.js`.
+2. **Zameni** sadržaj `resources/css/app.css` sadržajem `handoff/app.css`.
+3. U `resources/views/layouts/shop.blade.php`, u `<head>`, zameni Google Fonts link:
 
-## Lokalizacija
-
-Jezici: **en**, **sr**, **mk**, **bg**, **sq**. Izbor jezika u header-u (dropdown). Jezik se čuva u session; za promenu dodaj `?locale=sr` (ili drugi kod).
-
-## Baza (MySQL)
-
-Projekat koristi **MySQL** (lokalno i na produkciji).
-
-**Lokalno:**
-
-1. Kreiraj praznu bazu (npr. `glinart`):
-   ```bash
-   mysql -u root -e "CREATE DATABASE glinart CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+   Staro:
    ```
-   Ili u phpMyAdmin / MySQL Workbench: New Database → ime `glinart`.
-
-2. U `.env` podesi:
-   ```env
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=glinart
-   DB_USERNAME=root
-   DB_PASSWORD=
+   family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700
    ```
-   (Lozinku stavi ako ti MySQL zahteva.)
-
-3. Migracije i seed:
-   ```bash
-   php artisan migrate
-   php artisan db:seed
+   Novo:
+   ```
+   family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&family=Caveat:wght@600
    ```
 
-**Produkcija (npr. Hostinger):**
+4. Ornament traka: `<div class="etno-border-top"></div>` već postoji u `shop.blade.php` — sada koristi novu klasu iz `app.css` (cik-cak umesto pune linije). Opciono dodaj i `<div class="etno-border-bottom"></div>` odmah iznad `<footer>`.
 
-- U hPanel-u već imaš MySQL bazu i korisnika. U `.env` na serveru stavi `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` koje ti dodele.
-- Na serveru pokreni samo: `php artisan migrate` (seed po želji).
+5. Eyebrow tekst (rukom pisan akcent) — dodaj gde želiš iznad naslova, npr. u `home.blade.php` pre `<h1>` u hero-u:
+   ```
+   <span class="etno-eyebrow">ručno rađeno, sa ljubavlju</span>
+   ```
 
-## Pokretanje
+## Šta OSTAJE isto
 
-```bash
-cp .env.example .env
-php artisan key:generate
-# Kreiraj MySQL bazu (vidi "Baza (MySQL)" iznad), pa:
-php artisan migrate
-php artisan db:seed
-php artisan storage:link
-npm install && npm run build
-php artisan serve
-```
+Sve klase (`.hero`, `.product-card`, `.about-grid`, `.process-steps`, `.section-dark`, itd.) i cela Blade/Livewire struktura — menjaju se samo boje i fontovi kroz CSS varijable i tailwind config, pa nema rizika da nešto pukne.
 
-- **Admin**: `misa.spale@gmail.com` / `password`
-- **Korisnik**: `test@example.com` / `password`
+## Napomena o boji
 
-## Mejl
-
-Porudžbina šalje mejl na `MAIL_FROM_ADDRESS` (.env). Za produkciju podesi `MAIL_MAILER=smtp` i SMTP parametre; inače se loguje u `storage/logs/laravel.log`.
-
----
-
-## Tehnologija
-
-GlinArt koristi [Laravel](https://laravel.com) (PHP) framework.
-
-## Licenca
-
-Laravel framework je open-source softver pod [MIT licencom](https://opensource.org/licenses/MIT).
+`--color-primary` sad koristi `oklch()` direktno (podržano u svim modernim browserima). Ako ti treba hex fallback za stariji alat, javi pa konvertujem.

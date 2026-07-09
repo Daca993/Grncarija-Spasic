@@ -1,0 +1,428 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== Etno Modern Paletka v2 ========== */
+:root {
+  --color-primary: oklch(52% 0.1 55);      /* Terakota (nova) */
+  --color-dark: oklch(24% 0.03 50);        /* Tamno braon */
+  --color-light: oklch(97% 0.015 75);      /* Topao off-white */
+  --color-accent: oklch(58% 0.09 140);     /* Maslinasta (sekundarni akcenat) */
+  --color-border: oklch(24% 0.02 50 / 0.12);
+}
+
+/* ========== Base Stilovi ========== */
+html, body {
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--color-dark);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); line-height: 1.15; }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+
+/* Rukom pisani etno akcent - koristi na "eyebrow" tekstu iznad naslova */
+.etno-eyebrow {
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(42, 35, 32, 0.85);
+}
+
+/* ========== Ornament traka (etno motiv, cik-cak) ========== */
+.etno-border-top,
+.etno-border-bottom {
+  height: 8px;
+  width: 100%;
+  background: repeating-linear-gradient(115deg, var(--color-primary) 0 10px, transparent 10px 20px);
+  opacity: 0.55;
+}
+
+/* ========== Container ========== */
+.site-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 5vw, 3rem);
+  padding-right: clamp(1rem, 5vw, 3rem);
+}
+
+/* ========== Button ========== */
+.btn-primary {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background-color: var(--color-primary);
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  border: 2px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background-color: transparent;
+  color: var(--color-dark);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+  border: 2px solid var(--color-dark);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-dark);
+  color: white;
+}
+
+/* ========== Hero Sekcija ========== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(42, 35, 32, 0.3) 0%, oklch(52% 0.1 55 / 0.2) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+}
+
+.hero h1 {
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* ========== Sekcije ========== */
+section {
+  padding: clamp(3rem, 10vw, 6rem) 0;
+}
+
+.section-dark {
+  background-color: var(--color-dark);
+  color: white;
+}
+
+.section-dark h2, .section-dark h3 {
+  color: white;
+}
+
+.section-dark p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section-light {
+  background-color: var(--color-light);
+}
+
+/* ========== Grid Proizvoda ========== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* ========== Proizvod Kartica ========== */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  box-shadow: 0 12px 32px rgba(42, 35, 32, 0.15);
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.product-card-body {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-name {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.product-card-price {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: auto;
+}
+
+/* ========== Sekcija O Nama ========== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.about-image {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 4px 16px rgba(42, 35, 32, 0.1);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text h2 {
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.about-text p {
+  margin-bottom: 1.25rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========== Proces - Koraci ========== */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-number {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 0.75rem;
+}
+
+.step-desc {
+  font-size: 0.9rem;
+  color: rgba(42, 35, 32, 0.75);
+  line-height: 1.6;
+}
+
+.step-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+/* ========== Stats ========== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.stat {
+  padding: 1.5rem;
+}
+
+.stat-number {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(42, 35, 32, 0.65);
+}
+
+/* ========== Divider ========== */
+.divider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 2rem 0;
+}
+
+/* ========== Text section ========== */
+.text-section {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.text-section p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ========== Forme ========== */
+input, textarea, select {
+  font-family: 'Work Sans', sans-serif;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  background-color: white;
+  color: var(--color-dark);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px oklch(52% 0.1 55 / 0.12);
+}
+
+/* ========== Accessibility ========== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  .product-card,
+  .step {
+    animation: fadeInUp 0.6s ease-out backwards;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

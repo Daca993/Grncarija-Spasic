@@ -12,17 +12,19 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', ...defaultTheme.fontFamily.sans],
-                serif: ['Fraunces', 'Playfair Display', ...defaultTheme.fontFamily.serif],
+                // Bio: Inter / Fraunces -> novi izbor: Work Sans / Lora + Caveat za etno akcente
+                sans: ['Work Sans', ...defaultTheme.fontFamily.sans],
+                serif: ['Lora', ...defaultTheme.fontFamily.serif],
+                accent: ['Caveat', 'cursive'],
             },
             colors: {
                 etno: {
-                    primary: '#C1652F',    /* Terakota */
-                    dark: '#2A2320',       /* Tamni braon */
-                    light: '#FAF7F2',      /* Svetli bež */
-                    accent: '#B8956E',     /* Zlatna */
-                    border: '#E8DECC',     /* Siva bež */
-                    text: '#2A2320',       /* Tekst */
+                    primary: 'oklch(52% 0.1 55)',   /* nova terakota, manje zasićena */
+                    dark: 'oklch(24% 0.03 50)',      /* tamno braon-crna */
+                    light: 'oklch(97% 0.015 75)',    /* topao off-white */
+                    accent: 'oklch(58% 0.09 140)',   /* maslinasta, sekundarni akcenat */
+                    border: 'oklch(24% 0.02 50 / 0.12)',
+                    text: 'oklch(24% 0.02 50)',
                 },
             },
             borderRadius: {
