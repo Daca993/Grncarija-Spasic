@@ -1,6 +1,10 @@
 {
+  "_bootstrap-CKl8NZMC.js": {
+    "file": "assets/bootstrap-CKl8NZMC.js",
+    "name": "bootstrap"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-CVS3DBJI.css",
+    "file": "assets/app-Dadk8taE.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,18 +13,21 @@
     ]
   },
   "resources/js/app-shop.js": {
-    "file": "assets/app-shop-CKl8NZMC.js",
+    "file": "assets/app-shop-C27FTnmf.js",
     "name": "app-shop",
     "src": "resources/js/app-shop.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_bootstrap-CKl8NZMC.js"
+    ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-Bo-KkD_q.js",
+    "file": "assets/app-ljiYMu-L.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "resources/js/app-shop.js"
+      "_bootstrap-CKl8NZMC.js"
     ]
   }
 }
